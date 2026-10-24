@@ -1,0 +1,1174 @@
+:root {
+	--ciwa-bg: #f4fbf8;
+	--ciwa-bg-2: #eef7ff;
+	--ciwa-panel: #ffffff;
+	--ciwa-card: #ffffff;
+	--ciwa-line: rgba(15, 60, 80, 0.1);
+	--ciwa-text: #12323a;
+	--ciwa-muted: #5f7b86;
+	--ciwa-accent: #2fd66f;
+	--ciwa-accent-2: #1ea7c4;
+	--ciwa-accent-deep: #0f6f8c;
+	--ciwa-danger: #e5486a;
+	--ciwa-warn: #e5a000;
+	--ciwa-ok: #1fad63;
+	--ciwa-radius: 18px;
+	--ciwa-shadow: 0 12px 36px rgba(30, 120, 140, 0.1);
+	--ciwa-font: "Vazirmatn", "Tahoma", "Segoe UI", sans-serif;
+	--ciwa-grad: linear-gradient(135deg, #7CFF4A 0%, #2FD66F 35%, #1EA7C4 75%, #0F6F8C 100%);
+}
+
+.ciwa-app {
+	font-family: var(--ciwa-font);
+	display: grid;
+	grid-template-columns: 268px 1fr;
+	min-height: calc(100vh - 32px);
+	margin: 0 0 0 -20px;
+	background:
+		radial-gradient(900px 420px at 100% -5%, rgba(124, 255, 74, 0.22), transparent 55%),
+		radial-gradient(700px 380px at 0% 100%, rgba(30, 167, 196, 0.16), transparent 50%),
+		linear-gradient(165deg, var(--ciwa-bg), var(--ciwa-bg-2));
+	color: var(--ciwa-text);
+	direction: rtl;
+}
+
+.ciwa-sidebar {
+	background: rgba(255, 255, 255, 0.88);
+	border-left: 1px solid var(--ciwa-line);
+	padding: 22px 14px;
+	display: flex;
+	flex-direction: column;
+	gap: 22px;
+	backdrop-filter: blur(12px);
+	box-shadow: -8px 0 30px rgba(20, 90, 110, 0.06);
+}
+
+.ciwa-brand {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 8px 6px;
+}
+
+.ciwa-logo {
+	width: 56px;
+	height: 56px;
+	border-radius: 16px;
+	display: grid;
+	place-items: center;
+	overflow: visible;
+	background: transparent;
+	box-shadow: none;
+	border: none;
+	padding: 0;
+}
+
+.ciwa-logo img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	display: block;
+}
+
+.ciwa-brand strong {
+	display: block;
+	font-size: 14px;
+	color: var(--ciwa-text);
+}
+
+.ciwa-brand span {
+	color: var(--ciwa-muted);
+	font-size: 12px;
+}
+
+.ciwa-nav {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.ciwa-nav-item {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 12px 14px;
+	border-radius: 12px;
+	color: var(--ciwa-muted);
+	text-decoration: none;
+	transition: 0.2s ease;
+	font-weight: 600;
+}
+
+.ciwa-nav-item:hover,
+.ciwa-nav-item.is-active {
+	background: linear-gradient(90deg, rgba(124, 255, 74, 0.18), rgba(30, 167, 196, 0.12));
+	color: var(--ciwa-accent-deep);
+}
+
+.ciwa-nav-item.is-active {
+	box-shadow: inset 3px 0 0 var(--ciwa-accent);
+}
+
+.ciwa-sidebar-foot {
+	margin-top: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.ciwa-status-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 12px;
+	border-radius: 999px;
+	font-size: 12px;
+	background: #f0faf5;
+	border: 1px solid rgba(47, 214, 111, 0.25);
+	color: var(--ciwa-text);
+	font-weight: 700;
+}
+
+.ciwa-status-pill .dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: var(--ciwa-muted);
+}
+
+.ciwa-status-pill.is-on .dot {
+	background: var(--ciwa-ok);
+	box-shadow: 0 0 0 4px rgba(31, 173, 99, 0.2);
+}
+
+.ciwa-status-pill.is-off .dot {
+	background: var(--ciwa-danger);
+}
+
+.ciwa-author {
+	color: var(--ciwa-muted);
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.ciwa-author:hover {
+	color: var(--ciwa-accent-2);
+}
+
+.ciwa-main {
+	padding: 24px 28px 40px;
+	overflow: auto;
+}
+
+.ciwa-topbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 22px;
+}
+
+.ciwa-topbar h1 {
+	margin: 0;
+	font-size: 28px;
+	font-weight: 800;
+	background: var(--ciwa-grad);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.ciwa-sub {
+	margin: 4px 0 0;
+	color: var(--ciwa-muted);
+}
+
+.ciwa-card {
+	background: var(--ciwa-card);
+	border: 1px solid var(--ciwa-line);
+	border-radius: var(--ciwa-radius);
+	padding: 20px;
+	margin-bottom: 16px;
+	box-shadow: var(--ciwa-shadow);
+}
+
+.ciwa-card-accent {
+	border-color: rgba(47, 214, 111, 0.45);
+	background:
+		linear-gradient(180deg, rgba(124, 255, 74, 0.08), transparent 40%),
+		#fff;
+}
+
+.ciwa-card-head h2 {
+	margin: 0 0 6px;
+	font-size: 18px;
+	color: var(--ciwa-text);
+}
+
+.ciwa-card-head p {
+	margin: 0 0 16px;
+	color: var(--ciwa-muted);
+}
+
+.ciwa-btn {
+	appearance: none;
+	border: 0;
+	border-radius: 12px;
+	padding: 11px 18px;
+	font-family: inherit;
+	font-weight: 700;
+	cursor: pointer;
+	transition: 0.2s ease;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+}
+
+.ciwa-btn-primary {
+	background: var(--ciwa-grad);
+	color: #06301f;
+	box-shadow: 0 10px 28px rgba(47, 214, 111, 0.3);
+}
+
+.ciwa-btn-primary:hover {
+	transform: translateY(-1px);
+	filter: brightness(1.04);
+}
+
+.ciwa-btn-secondary {
+	background: rgba(30, 167, 196, 0.12);
+	color: var(--ciwa-accent-deep);
+	border: 1px solid rgba(30, 167, 196, 0.35);
+}
+
+.ciwa-btn-success {
+	background: linear-gradient(135deg, #2fd66f, #1ead63);
+	color: #fff;
+}
+
+.ciwa-btn-danger {
+	background: rgba(229, 72, 106, 0.1);
+	color: #c6284e;
+	border: 1px solid rgba(229, 72, 106, 0.35);
+}
+
+.ciwa-btn-ghost {
+	background: #fff;
+	color: var(--ciwa-muted);
+	border: 1px solid var(--ciwa-line);
+}
+
+.ciwa-btn-xl {
+	padding: 16px 28px;
+	font-size: 16px;
+	border-radius: 14px;
+}
+
+.ciwa-btn:disabled {
+	opacity: 0.45;
+	cursor: not-allowed;
+	transform: none !important;
+}
+
+.ciwa-welcome-hero {
+	position: relative;
+	overflow: hidden;
+	border-radius: 24px;
+	padding: 48px 40px;
+	margin-bottom: 18px;
+	background:
+		linear-gradient(135deg, rgba(124, 255, 74, 0.2), rgba(30, 167, 196, 0.18)),
+		#fff;
+	border: 1px solid rgba(47, 214, 111, 0.3);
+	box-shadow: var(--ciwa-shadow);
+}
+
+.ciwa-welcome-glow {
+	position: absolute;
+	inset: auto -15% -45% auto;
+	width: 420px;
+	height: 420px;
+	background: radial-gradient(circle, rgba(124, 255, 74, 0.35), transparent 70%);
+	pointer-events: none;
+}
+
+.ciwa-welcome-inner {
+	position: relative;
+	max-width: 720px;
+}
+
+.ciwa-welcome-brand {
+	width: 108px;
+	height: 108px;
+	margin-bottom: 18px;
+	border-radius: 0;
+	background: transparent;
+	box-shadow: none;
+	display: grid;
+	place-items: center;
+	padding: 0;
+	border: none;
+}
+
+.ciwa-welcome-brand img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.ciwa-eyebrow {
+	display: inline-block;
+	padding: 6px 12px;
+	border-radius: 999px;
+	background: rgba(47, 214, 111, 0.15);
+	color: var(--ciwa-accent-deep);
+	font-size: 12px;
+	margin-bottom: 14px;
+	font-weight: 700;
+}
+
+.ciwa-welcome-hero h2 {
+	margin: 0 0 12px;
+	font-size: 40px;
+	letter-spacing: -0.02em;
+	background: var(--ciwa-grad);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.ciwa-welcome-hero p {
+	color: var(--ciwa-muted);
+	line-height: 1.9;
+	font-size: 15px;
+}
+
+.ciwa-welcome-points {
+	margin: 18px 0 24px;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	gap: 8px;
+}
+
+.ciwa-welcome-points li::before {
+	content: "✓";
+	color: var(--ciwa-ok);
+	margin-left: 8px;
+	font-weight: 800;
+}
+
+.ciwa-welcome-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 14px;
+}
+
+.ciwa-wizard-steps {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 8px;
+	margin-bottom: 16px;
+}
+
+.ciwa-wstep {
+	text-align: center;
+	padding: 10px 8px;
+	border-radius: 12px;
+	background: #fff;
+	border: 1px solid var(--ciwa-line);
+	color: var(--ciwa-muted);
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.ciwa-wstep.is-done {
+	color: #06301f;
+	background: var(--ciwa-grad);
+	border-color: transparent;
+	font-weight: 800;
+}
+
+.ciwa-flow {
+	margin-bottom: 10px;
+	background: #f8fcfb;
+	border: 1px solid var(--ciwa-line);
+	border-radius: 14px;
+	overflow: hidden;
+}
+
+.ciwa-flow-title {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-weight: 700;
+	margin-bottom: 12px;
+}
+
+.ciwa-step-row {
+	margin: 0;
+}
+
+.ciwa-field,
+.ciwa-field-row {
+	margin-bottom: 12px;
+}
+
+.ciwa-field label,
+.ciwa-field-row label {
+	display: block;
+	margin-bottom: 6px;
+	color: var(--ciwa-muted);
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.ciwa-field-row {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.ciwa-app input[type="text"],
+.ciwa-app input[type="url"],
+.ciwa-app input[type="number"],
+.ciwa-app input[type="search"],
+.ciwa-app select {
+	width: 100%;
+	background: #fff;
+	border: 1px solid var(--ciwa-line);
+	border-radius: 10px;
+	color: var(--ciwa-text);
+	padding: 10px 12px;
+	font-family: inherit;
+}
+
+.ciwa-app input:focus,
+.ciwa-app select:focus {
+	outline: none;
+	border-color: rgba(30, 167, 196, 0.65);
+	box-shadow: 0 0 0 3px rgba(30, 167, 196, 0.15);
+}
+
+.ltr {
+	direction: ltr;
+	text-align: left;
+}
+
+.ciwa-grid-2 {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 14px;
+}
+
+.ciwa-field-box {
+	background: #f3fbf8;
+	border: 1px dashed rgba(30, 167, 196, 0.4);
+	border-radius: 14px;
+	padding: 14px;
+}
+
+.ciwa-tutorial-banner {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding: 16px 18px;
+	margin-bottom: 16px;
+	border-radius: 16px;
+	text-decoration: none;
+	color: inherit;
+	background: linear-gradient(90deg, rgba(124, 255, 74, 0.18), rgba(30, 167, 196, 0.14));
+	border: 1px solid rgba(30, 167, 196, 0.3);
+	transition: 0.2s ease;
+}
+
+.ciwa-tutorial-banner:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 12px 30px rgba(30, 167, 196, 0.12);
+}
+
+.ciwa-tutorial-ico {
+	font-size: 28px;
+}
+
+.ciwa-tutorial-banner strong {
+	display: block;
+	color: var(--ciwa-text);
+}
+
+.ciwa-tutorial-banner small {
+	color: var(--ciwa-muted);
+}
+
+.ciwa-tutorial-arrow {
+	margin-right: auto;
+	font-size: 22px;
+	color: var(--ciwa-accent-2);
+}
+
+.ciwa-actions-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin: 14px 0;
+}
+
+.ciwa-n8n-panel.is-locked {
+	opacity: 0.55;
+	pointer-events: none;
+	filter: grayscale(0.2);
+}
+
+.ciwa-test-report {
+	margin-top: 16px;
+	border-radius: 14px;
+	overflow: hidden;
+	border: 1px solid var(--ciwa-line);
+	background: #fff;
+}
+
+.ciwa-report-summary {
+	padding: 14px 16px;
+	font-weight: 700;
+}
+
+.ciwa-report-summary.is-ok {
+	background: rgba(31, 173, 99, 0.12);
+	color: var(--ciwa-ok);
+}
+
+.ciwa-report-summary.is-fail {
+	background: rgba(229, 72, 106, 0.1);
+	color: #c6284e;
+}
+
+.ciwa-report-steps {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.ciwa-report-steps li {
+	display: flex;
+	gap: 12px;
+	padding: 12px 16px;
+	border-top: 1px solid var(--ciwa-line);
+	background: #fafcfb;
+}
+
+.ciwa-report-steps .mark {
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	font-weight: 800;
+	flex: 0 0 auto;
+}
+
+.ciwa-report-steps li.ok .mark {
+	background: rgba(31, 173, 99, 0.15);
+	color: var(--ciwa-ok);
+}
+
+.ciwa-report-steps li.fail .mark {
+	background: rgba(229, 72, 106, 0.15);
+	color: var(--ciwa-danger);
+}
+
+.ciwa-report-steps small {
+	display: block;
+	color: var(--ciwa-muted);
+	margin-top: 4px;
+}
+
+.ciwa-kpi-grid {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 12px;
+	margin-bottom: 16px;
+}
+
+.ciwa-kpi {
+	background: #fff;
+	border: 1px solid var(--ciwa-line);
+	border-radius: 16px;
+	padding: 16px;
+	box-shadow: var(--ciwa-shadow);
+}
+
+.ciwa-kpi span {
+	display: block;
+	color: var(--ciwa-muted);
+	font-size: 12px;
+	margin-bottom: 8px;
+	font-weight: 600;
+}
+
+.ciwa-kpi strong {
+	font-size: 24px;
+	color: var(--ciwa-text);
+}
+
+.ciwa-kpi strong.ok { color: var(--ciwa-ok); }
+.ciwa-kpi strong.warn { color: var(--ciwa-warn); }
+.ciwa-kpi strong.err { color: var(--ciwa-danger); }
+
+.ciwa-funnel {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: 12px;
+}
+
+.ciwa-funnel-meta {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 6px;
+	font-size: 13px;
+}
+
+.ciwa-funnel-bar {
+	height: 10px;
+	border-radius: 999px;
+	background: rgba(15, 60, 80, 0.08);
+	overflow: hidden;
+}
+
+.ciwa-funnel-bar i {
+	display: block;
+	height: 100%;
+	background: var(--ciwa-grad);
+	border-radius: inherit;
+}
+
+.ciwa-syslist {
+	list-style: none;
+	margin: 0 0 14px;
+	padding: 0;
+}
+
+.ciwa-syslist li {
+	display: flex;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 10px 0;
+	border-bottom: 1px solid var(--ciwa-line);
+	align-items: center;
+}
+
+.ciwa-syslist code {
+	font-size: 11px;
+	color: var(--ciwa-accent-deep);
+	max-width: 60%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.ciwa-alert {
+	padding: 12px 16px;
+	border-radius: 12px;
+	background: rgba(229, 160, 0, 0.12);
+	border: 1px solid rgba(229, 160, 0, 0.35);
+	color: #9a6a00;
+	margin-bottom: 14px;
+}
+
+.ciwa-alert a {
+	color: var(--ciwa-accent-deep);
+	margin-right: 8px;
+	font-weight: 700;
+}
+
+.ciwa-logs-toolbar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-bottom: 14px;
+}
+
+.ciwa-logs-toolbar input,
+.ciwa-logs-toolbar select {
+	max-width: 200px;
+}
+
+.ciwa-table-wrap {
+	overflow: auto;
+	border-radius: 12px;
+	border: 1px solid var(--ciwa-line);
+	background: #fff;
+}
+
+.ciwa-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 13px;
+}
+
+.ciwa-table th,
+.ciwa-table td {
+	padding: 10px 12px;
+	border-bottom: 1px solid var(--ciwa-line);
+	text-align: right;
+	vertical-align: top;
+}
+
+.ciwa-table th {
+	background: #f3faf7;
+	color: var(--ciwa-muted);
+	font-weight: 700;
+}
+
+.ciwa-badge {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 999px;
+	font-size: 11px;
+	font-weight: 700;
+}
+
+.ciwa-badge-info { background: rgba(30, 167, 196, 0.15); color: var(--ciwa-accent-deep); }
+.ciwa-badge-success { background: rgba(31, 173, 99, 0.15); color: var(--ciwa-ok); }
+.ciwa-badge-warning { background: rgba(229, 160, 0, 0.15); color: #9a6a00; }
+.ciwa-badge-error { background: rgba(229, 72, 106, 0.12); color: #c6284e; }
+.ciwa-badge-debug { background: rgba(15, 60, 80, 0.08); color: var(--ciwa-muted); }
+
+.ciwa-logs-pager {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	margin-top: 12px;
+}
+
+.ciwa-toast {
+	position: fixed;
+	left: 24px;
+	bottom: 24px;
+	z-index: 100000;
+	padding: 14px 18px;
+	border-radius: 12px;
+	background: #fff;
+	border: 1px solid rgba(47, 214, 111, 0.4);
+	color: var(--ciwa-text);
+	box-shadow: var(--ciwa-shadow);
+	min-width: 240px;
+	font-weight: 700;
+}
+
+.ciwa-toast.is-error {
+	border-color: rgba(229, 72, 106, 0.5);
+	color: #c6284e;
+}
+
+.ciwa-checklist {
+	margin: 0;
+	padding-right: 18px;
+	color: var(--ciwa-muted);
+	line-height: 2;
+}
+
+.ciwa-build-result {
+	margin-top: 14px;
+	padding: 14px;
+	border-radius: 12px;
+	background: rgba(31, 173, 99, 0.1);
+	border: 1px solid rgba(31, 173, 99, 0.3);
+}
+
+.ciwa-danger-zone {
+	border-color: rgba(229, 72, 106, 0.4) !important;
+	background: linear-gradient(180deg, rgba(229, 72, 106, 0.08), #fff) !important;
+}
+
+.ciwa-danger-zone h2 {
+	color: #c6284e !important;
+}
+
+.ciwa-stage.is-disabled .amiran-steps-table,
+.ciwa-stage.is-disabled .ciwa-flow-steps {
+	opacity: 0.45;
+	pointer-events: none;
+}
+
+@media (max-width: 1100px) {
+	.ciwa-kpi-grid { grid-template-columns: repeat(3, 1fr); }
+	.ciwa-welcome-grid,
+	.ciwa-grid-2,
+	.ciwa-wizard-steps { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 860px) {
+	.ciwa-app { grid-template-columns: 1fr; margin-left: -10px; }
+	.ciwa-sidebar { border-left: 0; border-bottom: 1px solid var(--ciwa-line); }
+	.ciwa-nav { flex-direction: row; flex-wrap: wrap; }
+}
+
+/* ——— Accordion folds ——— */
+.ciwa-accordion {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.ciwa-fold {
+	background: #fff;
+	border: 1px solid var(--ciwa-line);
+	border-radius: 18px;
+	box-shadow: 0 8px 24px rgba(20, 90, 110, 0.05);
+	overflow: hidden;
+}
+
+.ciwa-fold-sum {
+	list-style: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding: 16px 18px;
+	user-select: none;
+	background: linear-gradient(90deg, rgba(124, 255, 74, 0.06), transparent 55%);
+}
+
+.ciwa-fold-sum::-webkit-details-marker { display: none; }
+
+.ciwa-fold-num {
+	width: 32px;
+	height: 32px;
+	border-radius: 10px;
+	display: grid;
+	place-items: center;
+	font-weight: 800;
+	font-size: 13px;
+	color: #06301f;
+	background: var(--ciwa-grad);
+	flex-shrink: 0;
+}
+
+.ciwa-fold-text {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.ciwa-fold-text strong {
+	font-size: 15px;
+	color: var(--ciwa-text);
+}
+
+.ciwa-fold-text small {
+	color: var(--ciwa-muted);
+	font-size: 12px;
+}
+
+.ciwa-fold-chevron {
+	width: 10px;
+	height: 10px;
+	border-right: 2px solid var(--ciwa-muted);
+	border-bottom: 2px solid var(--ciwa-muted);
+	transform: rotate(45deg);
+	transition: transform 0.2s ease;
+	flex-shrink: 0;
+	margin-left: 4px;
+}
+
+.ciwa-fold[open] > .ciwa-fold-sum .ciwa-fold-chevron,
+.ciwa-flow-fold[open] > .ciwa-flow-sum .ciwa-fold-chevron,
+.ciwa-step-fold[open] > .ciwa-step-sum .ciwa-fold-chevron {
+	transform: rotate(-135deg);
+}
+
+.ciwa-fold-body {
+	padding: 4px 18px 18px;
+	border-top: 1px solid var(--ciwa-line);
+}
+
+.ciwa-fold-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 14px;
+}
+
+.ciwa-vars-bar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 6px;
+	margin-bottom: 12px;
+	font-size: 12px;
+	color: var(--ciwa-muted);
+}
+
+.ciwa-inline-bar {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-wrap: wrap;
+	margin-bottom: 14px;
+}
+
+.ciwa-inline-bar input[type="number"],
+.ciwa-inline-bar input[type="time"],
+.ciwa-inline-bar select {
+	width: auto;
+	min-width: 88px;
+	max-width: 140px;
+}
+
+.ciwa-field-span { grid-column: 1 / -1; }
+
+/* Flow fold */
+.ciwa-flow-sum {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 12px 14px;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+.ciwa-flow-sum::-webkit-details-marker { display: none; }
+
+.ciwa-flow-sum-title { flex: 1; }
+.ciwa-flow-sum-meta {
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--ciwa-muted);
+}
+
+.ciwa-flow-steps {
+	padding: 0 12px 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+/* Step fold — compact closed, form when open */
+.ciwa-step-fold {
+	background: #fff;
+	border: 1px solid var(--ciwa-line);
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.ciwa-step-sum {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 10px 12px;
+	cursor: pointer;
+}
+
+.ciwa-step-sum::-webkit-details-marker { display: none; }
+
+.ciwa-step-label {
+	flex: 1;
+	font-weight: 600;
+	font-size: 13px;
+	min-width: 0;
+}
+
+.ciwa-chip {
+	display: inline-flex;
+	align-items: center;
+	padding: 3px 8px;
+	border-radius: 999px;
+	font-size: 11px;
+	font-weight: 700;
+	background: rgba(15, 60, 80, 0.08);
+	color: var(--ciwa-muted);
+	white-space: nowrap;
+}
+
+.ciwa-chip-teal {
+	background: rgba(30, 167, 196, 0.15);
+	color: var(--ciwa-accent-deep);
+}
+
+.ciwa-step-panel {
+	padding: 0 12px 12px;
+	border-top: 1px dashed var(--ciwa-line);
+	padding-top: 12px;
+}
+
+.ciwa-step-grid {
+	display: grid;
+	grid-template-columns: 1.2fr 1fr 1fr;
+	gap: 10px;
+	margin-bottom: 10px;
+}
+
+.ciwa-step-panel textarea {
+	width: 100%;
+	border: 1px solid var(--ciwa-line);
+	border-radius: 10px;
+	padding: 10px;
+	font-family: var(--ciwa-font);
+	resize: vertical;
+	background: #fafcfb;
+}
+
+.ciwa-ab-box {
+	display: grid;
+	gap: 8px;
+	margin: 10px 0;
+	padding: 10px;
+	border-radius: 10px;
+	background: rgba(124, 255, 74, 0.08);
+}
+
+.ciwa-msg-meta {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 12px;
+	color: var(--ciwa-muted);
+}
+
+/* Engine / templates */
+.ciwa-engine-grid,
+.ciwa-template-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 12px;
+}
+
+.ciwa-engine-card,
+.ciwa-template-card {
+	text-align: right;
+	border: 1px solid var(--ciwa-line);
+	border-radius: 14px;
+	padding: 14px;
+	background: #fff;
+	cursor: pointer;
+	transition: 0.2s ease;
+	font: inherit;
+	color: inherit;
+	display: block;
+	width: 100%;
+}
+
+.ciwa-engine-card:hover,
+.ciwa-template-card:hover,
+.ciwa-engine-card.is-selected,
+.ciwa-template-card.is-selected {
+	border-color: rgba(47, 214, 111, 0.55);
+	box-shadow: 0 8px 22px rgba(47, 214, 111, 0.14);
+	background: linear-gradient(135deg, rgba(124, 255, 74, 0.12), rgba(30, 167, 196, 0.08));
+}
+
+.ciwa-engine-card strong,
+.ciwa-template-card strong {
+	display: block;
+	font-size: 14px;
+	margin-bottom: 4px;
+}
+
+.ciwa-engine-card p,
+.ciwa-template-card span {
+	color: var(--ciwa-muted);
+	font-size: 12px;
+	line-height: 1.6;
+}
+
+.ciwa-engine-card ul {
+	margin: 8px 0 0;
+	padding: 0 16px 0 0;
+	font-size: 12px;
+}
+
+.ciwa-engine-badge {
+	display: inline-block;
+	font-size: 10px;
+	font-weight: 700;
+	color: var(--ciwa-accent-deep);
+	background: rgba(47, 214, 111, 0.15);
+	padding: 3px 8px;
+	border-radius: 999px;
+	margin-bottom: 8px;
+}
+
+.ciwa-alert-info {
+	background: rgba(30, 167, 196, 0.1);
+	border: 1px solid rgba(30, 167, 196, 0.25);
+	color: var(--ciwa-accent-deep);
+	padding: 12px 16px;
+	border-radius: 12px;
+	margin-bottom: 14px;
+	font-size: 13px;
+}
+
+.ciwa-var {
+	display: inline-block;
+	padding: 2px 6px;
+	background: #f0faf5;
+	border-radius: 6px;
+	font-size: 11px;
+	direction: ltr;
+}
+
+.ciwa-modal {
+	position: fixed;
+	inset: 0;
+	background: rgba(15, 40, 50, 0.45);
+	display: grid;
+	place-items: center;
+	z-index: 100000;
+}
+
+.ciwa-modal[hidden] { display: none !important; }
+
+.ciwa-modal-card {
+	background: #fff;
+	border-radius: 18px;
+	padding: 24px;
+	width: min(520px, 92vw);
+	box-shadow: var(--ciwa-shadow);
+}
+
+.ciwa-preview-body {
+	white-space: pre-wrap;
+	background: #f3faf7;
+	padding: 14px;
+	border-radius: 12px;
+	font-family: var(--ciwa-font);
+	line-height: 1.8;
+}
+
+.ciwa-queue-wrap { margin-top: 12px; overflow-x: auto; }
+
+.ciwa-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 13px;
+}
+
+.ciwa-table th,
+.ciwa-table td {
+	border-bottom: 1px solid var(--ciwa-line);
+	padding: 8px 10px;
+	text-align: right;
+}
+
+.ciwa-kpi-grid-sm { grid-template-columns: repeat(4, 1fr); }
+
+.ciwa-n8n-panel.is-locked {
+	opacity: 0.55;
+	pointer-events: none;
+}
+
+@media (max-width: 1100px) {
+	.ciwa-engine-grid,
+	.ciwa-template-grid,
+	.ciwa-step-grid { grid-template-columns: 1fr; }
+	.ciwa-kpi-grid-sm { grid-template-columns: repeat(2, 1fr); }
+	.ciwa-chip { display: none; }
+}
